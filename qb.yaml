@@ -381,10 +381,6 @@ tasks:
     ref: main
     src: https://github.com/qbcore-framework/qb-shops
 
-  - action: download_github
-    dest: ./resources/[qb]/qb-interior
-    ref: main
-    src: https://github.com/qbcore-framework/qb-interior
 
   - action: download_github
     dest: ./resources/[qb]/qb-menu
